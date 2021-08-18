@@ -18,6 +18,7 @@ document.getElementById('qrcode-print').src="https://api.qrserver.com/v1/create-
 
 if (area >= 1 &&area <= 9 ) {
 document.getElementById("area-print").innerHTML = area;
+alert("Thank you for your donation!")
 } else {
 alert("Illegal input!");
 location.reload();

@@ -33,7 +33,7 @@ if (area >= 1 && area <= 3) {
 }
 document.getElementById("district-print").innerHTML = areaNumber[area];
 }
-new Date().getHours() >= 9 && new Date().getHours() <= 12 ? index() : (document.getElementById("congrats").innerHTML = "404",setTimeout(function(){
+new Date().getHours() >= 9 && new Date().getHours() <= 12 ? (document.querySelector("title").innerHTML = "Donation",index()) : (document.getElementById("congrats").innerHTML = "404 Not Found",setTimeout(function(){
     window.location.replace("https://usfns.tk/");
 }, 1000));
 // index();

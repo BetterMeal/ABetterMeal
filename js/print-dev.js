@@ -16,7 +16,7 @@ function index() {
     if (usrname === null || area === null) {
         document.getElementById("congrats").innerHTML = "Donation Canceled!";
         setTimeout(() => {
-            window.location.replace("../");
+            window.location.replace("../index.html");
         }, 1000);
     } else if (area < 1 || area > 9 || usrname === "" || area === "") {
         alert("Illegal input!");
@@ -36,6 +36,6 @@ function index() {
     document.getElementById("district-print").innerHTML = areaNumber[area];
 }
 new Date().getHours() >= 9 && new Date().getHours() <= 12 && window.location.href.indexOf("?track_id=af609ed206722bd0793713d50ca2858e897633b75d0453f97b6ab61c42c2e7e6") != -1 ? (document.querySelector("title").innerHTML = "Donation", index()) : (document.getElementById("congrats").innerHTML = "404 Not Found", setTimeout(() => {
-    window.location.replace("../");
+    window.location.replace("../index.html");
 }, 1000));
 // index();

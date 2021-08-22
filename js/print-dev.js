@@ -1,4 +1,10 @@
 "use strict";
+window.oncontextmenu = function () {
+    return false;
+};
+window.onselectstart = function () {
+    return false;
+};
 function index() {
     let day = ["", "周一", "周二", "周三", "周四", "周五", "周六", "周日"];
     let date = `${new Date().getMonth() + 1}/${new Date().getDate()}&nbsp${day[new Date().getDay()]}`;
@@ -15,7 +21,7 @@ function index() {
     // }
     if (usrname === null || area === null) {
         document.getElementById("congrats").innerHTML = "Donation Canceled!";
-        setTimeout(() => {
+        setTimeout(function () {
             window.location.replace("https://usfns.tk/");
         }, 1000);
     } else if (!(area >= 1 && area <= 9) || usrname === "" || area === "") {
@@ -35,7 +41,7 @@ function index() {
     }
     document.getElementById("district-print").innerHTML = areaNumber[area];
 }
-new Date().getHours() >= 9 && new Date().getHours() <= 12 && window.location.href.indexOf("?track_id=af609ed206722bd0793713d50ca2858e897633b75d0453f97b6ab61c42c2e7e6") != -1 ? (document.querySelector("title").innerHTML = "Donation", index()) : (document.getElementById("congrats").innerHTML = "404 Not Found", setTimeout(() => {
+new Date().getHours() >= 9 && new Date().getHours() <= 12 && window.location.href.indexOf("?track_id=af609ed206722bd0793713d50ca2858e897633b75d0453f97b6ab61c42c2e7e6") != -1 ? (document.querySelector("title").innerHTML = "Donation", index()) : (document.getElementById("congrats").innerHTML = "404 Not Found", setTimeout(function () {
     window.location.replace("https://usfns.tk/");
 }, 1000));
 // index();

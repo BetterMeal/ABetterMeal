@@ -18,7 +18,7 @@ function index() {
         setTimeout(() => {
             window.location.replace("https://usfns.tk/");
         }, 1000);
-    } else if (area < 1 || area > 9 || usrname === "" || area === "") {
+    } else if (!(area >= 1 && area <= 9) || usrname === "" || area === "") {
         alert("Illegal input!");
         window.location.reload();
     } else {

@@ -12,13 +12,6 @@ function index() {
     document.getElementById("nowtime-print").innerHTML = date;
     let usrname = prompt("Please enter your name:");
     let area = prompt("Amount of donation:");
-    // if (area >= 1 && area <= 9) {
-    //     document.getElementById("area-print").innerHTML = area;
-    //     alert("Thanks for your donation!");
-    // } else {
-    //     alert("Illegal input!");
-    //     window.location.reload();
-    // }
     if (usrname === null || area === null) {
         document.getElementById("congrats").innerHTML = "Donation Canceled!";
         setTimeout(function () {
@@ -30,6 +23,9 @@ function index() {
     } else {
         document.getElementById("area-print").innerHTML = area;
         document.getElementById("congrats").innerHTML = "Thanks For Your Donation!";
+        document.addEventListener("click", function () {
+            window.location.replace("https://usfns.tk");
+        });
         alert("Thanks for your donation!");
     }
     document.getElementById("name-print").innerHTML = usrname;

@@ -29,7 +29,7 @@ function index() {
         alert("Thanks for your donation!");
     }
     document.getElementById("name-print").innerHTML = usrname;
-    document.getElementById("qrcode-print").src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&charset-source=UTF-8&ecc=M&data=https://usfns.tk/scan.html?id=${encodeURI(usrname)}_${area}`;
+    document.getElementById("qrcode-print").src = `https://wenhairu.com/static/api/qr/?size=300&text=https://usfns.tk/scan.html?id=${encodeURI(usrname)}_${area}`;
     if (area >= 1 && area <= 3) {
         document.getElementById("floor-print").innerHTML = "一";
     } else {

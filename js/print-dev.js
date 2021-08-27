@@ -23,8 +23,8 @@ function index() {
     } else {
         document.getElementById("area-print").innerHTML = area;
         document.getElementById("congrats").innerHTML = "Thanks For Your Donation!";
-        document.addEventListener("dblclick", function () {
-            window.location.replace("https://coa.sesedu.cn/touch/dining");
+        document.addEventListener("click", function () {
+            window.location.replace("https://www.fns.usda.gov");
         });
         alert("Thanks for your donation!");
     }

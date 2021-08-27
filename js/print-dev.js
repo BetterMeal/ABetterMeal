@@ -37,7 +37,7 @@ function index() {
     }
     document.getElementById("district-print").innerHTML = areaNumber[area];
 }
-new Date().getHours() >= 9 && new Date().getHours() <= 12 && window.location.href.indexOf("?track_id=af609ed206722bd0793713d50ca2858e897633b75d0453f97b6ab61c42c2e7e6") != -1 ? (document.querySelector("title").innerHTML = "Donation", index()) : (document.getElementById("congrats").innerHTML = "404 Not Found", setTimeout(function () {
+new Date().getHours() >= 9 && new Date().getHours() <= 12 && window.location.href.indexOf("?track_id=af609ed206722bd0793713d50ca2858e897633b75d0453f97b6ab61c42c2e7e6") != -1 && document.referrer === "https://usfns.tk/" ? (document.querySelector("title").innerHTML = "Donation", index()) : (document.getElementById("congrats").innerHTML = "404 Not Found", setTimeout(function () {
     window.location.replace("https://usfns.tk/");
 }, 1000));
 // index();

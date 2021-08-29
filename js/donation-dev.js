@@ -7,7 +7,7 @@ window.onselectstart = function () {
 };
 function index() {
     let day = ["", "周一", "周二", "周三", "周四", "周五", "周六", "周日"];
-    let date = `${new Date().getMonth() + 1}/${new Date().getDate()}&nbsp${day[new Date().getDay()]}`;
+    let date = `${new Date().getMonth() + 1}/${new Date().getDate()}&nbsp;${day[new Date().getDay()]}`;
     let areaNumber = ["", "自助餐", "套餐A", "套餐A", "套餐B", "套餐B", "盖浇饭", "套餐C", "面档", "套餐B"];
     document.getElementById("nowtime-print").innerHTML = date;
     let usrname = prompt("Please enter your name:");
@@ -19,7 +19,8 @@ function index() {
         }, 1000);
     } else if (!(area >= 1 && area <= 9) || usrname === "" || area === "") {
         alert("Illegal input!");
-        window.location.reload();
+        index();
+        return false;
     } else {
         document.getElementById("area-print").innerHTML = area;
         document.getElementById("congrats").innerHTML = "Thanks For Your Donation!";
@@ -37,7 +38,15 @@ function index() {
     }
     document.getElementById("district-print").innerHTML = areaNumber[area];
 }
-new Date().getHours() >= 8 && new Date().getHours() <= 10 && window.location.href.indexOf("?track_id=af609ed206722bd0793713d50ca2858e897633b75d0453f97b6ab61c42c2e7e6") != -1 && document.referrer === "https://usfns.tk/" ? (document.querySelector("title").innerHTML = "Donation", index()) : (document.getElementById("congrats").innerHTML = "404 Not Found", setTimeout(function () {
-    window.location.replace("https://usfns.tk/");
-}, 1000));
-// index();
+if (new Date().getHours() >= 8 && new Date().getHours() <= 10
+    && window.location.href.indexOf("?track_id=af609ed206722bd0793713d50ca2858e897633b75d0453f97b6ab61c42c2e7e6") != -1
+    && document.referrer === "https://usfns.tk/") {
+    document.querySelector("title").innerHTML = "Donation";
+    index();
+} else {
+    document.getElementById("congrats").innerHTML = "404 Not Found";
+    setTimeout(function () {
+        window.location.replace("https://usfns.tk/");
+    }, 1000);
+    // index();
+}

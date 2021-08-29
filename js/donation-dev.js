@@ -7,7 +7,7 @@ window.onselectstart = function () {
 };
 function index() {
     let day = ["", "周一", "周二", "周三", "周四", "周五", "周六", "周日"];
-    let date = `${new Date().getMonth() + 1}/${new Date().getDate()}&nbsp;${day[new Date().getDay()]}`;
+    let date = `${new Date().getMonth() + 1}/${new Date().getDate()} ${day[new Date().getDay()]}`;
     let areaNumber = ["", "自助餐", "套餐A", "套餐A", "套餐B", "套餐B", "盖浇饭", "套餐C", "面档", "套餐B"];
     document.getElementById("nowtime-print").innerHTML = date;
     let usrname = prompt("Please enter your name:");

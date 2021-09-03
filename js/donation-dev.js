@@ -15,7 +15,7 @@ function index() {
     if (usrname === null || area === null) {
         document.getElementById("congrats").innerHTML = "Donation Canceled!";
         setTimeout(function () {
-            window.location.replace("https://usfns.tk/");
+            window.location.replace("https://w2m.usfns.tk/");
         }, 1000);
     } else if (!(area >= 1 && area <= 9) || usrname === "" || area === "") {
         alert("Illegal input!");
@@ -30,7 +30,7 @@ function index() {
         alert("Thanks for your donation!");
     }
     document.getElementById("name-print").innerHTML = usrname;
-    document.getElementById("qrcode-print").src = `https://wenhairu.com/static/api/qr/?size=300&text=https://usfns.tk/scan.html?id=${encodeURI(usrname)}_${area}`;
+    document.getElementById("qrcode-print").src = `https://wenhairu.com/static/api/qr/?size=300&text=https://w2m.usfns.tk/scan.html?id=${encodeURI(usrname)}_${area}`;
     if (area >= 1 && area <= 3) {
         document.getElementById("floor-print").innerHTML = "一";
     } else {
@@ -40,13 +40,13 @@ function index() {
 }
 if (new Date().getHours() >= 8 && new Date().getHours() <= 10
     && window.location.href.indexOf("?track_id=af609ed206722bd0793713d50ca2858e897633b75d0453f97b6ab61c42c2e7e6") != -1
-    && document.referrer === "https://usfns.tk/") {
+    && document.referrer === "https://w2m.usfns.tk/") {
     document.querySelector("title").innerHTML = "Donation";
     index();
 } else {
     document.getElementById("congrats").innerHTML = "404 Not Found";
     setTimeout(function () {
-        window.location.replace("https://usfns.tk/");
+        window.location.replace("https://w2m.usfns.tk/");
     }, 1000);
     // index();
 }

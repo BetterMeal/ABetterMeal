@@ -38,9 +38,7 @@ function index() {
     }
     document.getElementById("district-print").innerHTML = areaNumber[area];
 }
-if (new Date().getHours() >= 8 && new Date().getHours() <= 10
-    && window.location.href.indexOf("?track_id=af609ed206722bd0793713d50ca2858e897633b75d0453f97b6ab61c42c2e7e6") != -1
-    && document.referrer === "https://w2m.usfns.tk/") {
+if (document.referrer === "https://w2m.usfns.tk/") {
     document.querySelector("title").innerHTML = "Donation";
     index();
 } else {

@@ -2,7 +2,7 @@
 
 function generateQRCode(usrname, area) {
     var qrcode = new QRCode({
-        content: `${window.location.host}/scan.html?id=${encodeURI(usrname)}_${area}`,
+        content: `https://${window.location.host}/scan.html?id=${encodeURI(usrname)}_${area}`,
         container: "svg-viewbox", //Responsive use
         join: true //Crisp rendering and 4-5x reduced file size
     });

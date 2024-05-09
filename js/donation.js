@@ -1,5 +1,16 @@
 "use strict";
 
+function generateQRCode(usrname, area) {
+    var qrcode = new QRCode({
+        content: `${window.location.host}/scan.html?id=${encodeURI(usrname)}_${area}`,
+        container: "svg-viewbox", //Responsive use
+        join: true //Crisp rendering and 4-5x reduced file size
+    });
+    var svg = qrcode.svg();
+    document.getElementById("qrcode-print").innerHTML = svg;
+
+}
+
 function index() {
     let day = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
     let date = `${new Date().getMonth() + 1}/${new Date().getDate()} ${day[new Date().getDay()]}`;
@@ -14,7 +25,7 @@ function index() {
         document.getElementById("area-print").innerHTML = area;
     }
     document.getElementById("name-print").innerHTML = usrname;
-    document.getElementById("qrcode-print").src = `https://wenhairu.com/static/api/qr/?size=300&text=${window.location.host}/scan.html?id=${encodeURI(usrname)}_${area}`;
+    generateQRCode(usrname, area);
     if (area >= 1 && area <= 3) {
         document.getElementById("floor-print").innerHTML = "一";
     } else {
